@@ -2,6 +2,10 @@
 
 a place where store events
 
+It sends email for some type of events based on config.
+
+For sending mail with sendgrid: [https://sendgrid.com/blog/send-email-meteor-sendgrid/](https://sendgrid.com/blog/send-email-meteor-sendgrid/)
+
 ## Example code
 
 ```
