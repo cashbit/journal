@@ -63,8 +63,9 @@ __journal = function(){
         if (events.length > 0){
             var body = EJSON.stringify(events)
         } else {
-            var body = "No events today !!!" ;
+            return
         }
+        console.log('Sending alarms');
         if (__config.emailnotifications){
             if (__config.emailnotifications.alarmto){
                 __config.emailnotifications.alarmto.forEach(function(recipient){
@@ -86,7 +87,7 @@ __journal = function(){
         }
     });
 
-    Meteor.setInterval(notifyAlarm,10000) ;
+    //Meteor.setInterval(notifyAlarm,10000) ;
 
 
     return {
@@ -124,4 +125,4 @@ __journal = function(){
 
 journal = new __journal() ;
 
-journal.write("startup","journal","") ;
+if (process.env.NODE_ENV !== "development") journal.write("startup","journal","") ;
