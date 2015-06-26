@@ -22,7 +22,7 @@ Package.onUse(function (api) {
     api.versionsFrom('0.9.0');
     // Use Underscore package, but only on the server.
     // Version not specified, so it will be as of Meteor 0.9.0.
-    api.use('mrt:cron', 'server');
+    api.use('mrt:cron@0.0.1', 'server');
     // Give users of this package access to the Templating package.
     //api.imply('templating')
     api.export('journal', 'server');
